@@ -4,7 +4,6 @@
 import type { TFunction } from 'i18next';
 import type { LinkOption } from '../settings/types';
 
-import { createRococo } from './testingRococo';
 import { expandEndpoints } from './util';
 
 /* eslint-disable sort-keys */
@@ -17,9 +16,7 @@ import { expandEndpoints } from './util';
 
 export function createTesting (t: TFunction): LinkOption[] {
   return expandEndpoints(t, [
-    // polkadot test relays
-    createRococo(t),
-    // alphabetical based on chain name
+    // alphabetical based on chain name, e.g. Amber, Arcadia, Beresheet, ...
     {
       info: 'centrifuge',
       text: t('rpc.amber', 'Amber', { ns: 'apps-config' }),
@@ -92,6 +89,13 @@ export function createTesting (t: TFunction): LinkOption[] {
       }
     },
     {
+      info: 'dotmog',
+      text: t('rpc.dotmog', 'DOTMog', { ns: 'apps-config' }),
+      providers: {
+        DOTMog: 'wss://mogiway-01.dotmog.com'
+      }
+    },
+    {
       info: 'dusty',
       text: t('rpc.dusty', 'Dusty', { ns: 'apps-config' }),
       providers: {
@@ -137,13 +141,7 @@ export function createTesting (t: TFunction): LinkOption[] {
       info: 'jupiter',
       text: t('rpc.jupiter', 'Jupiter', { ns: 'apps-config' }),
       providers: {
-        Elara: 'wss://jupiter.elara.patract.io'
-      }
-    },
-    {
-      info: 'jupiter',
-      text: t('rpc.jupiter', 'Jupiter', { ns: 'apps-config' }),
-      providers: {
+        Elara: 'wss://jupiter.elara.patract.io',
         Patract: 'wss://ws.jupiter.patract.cn'
       }
     },
@@ -191,13 +189,6 @@ export function createTesting (t: TFunction): LinkOption[] {
       }
     },
     {
-      info: 'laminar',
-      text: t('rpc.turbulence', 'Turbulence', { ns: 'apps-config' }),
-      providers: {
-        Laminar: 'wss://testnet-node-1.laminar-chain.laminar.one/ws'
-      }
-    },
-    {
       info: 'sora-substrate',
       text: t('rpc.sora-substrate', 'SORA-staging', { ns: 'apps-config' }),
       providers: {
@@ -209,6 +200,20 @@ export function createTesting (t: TFunction): LinkOption[] {
       text: t('rpc.ternoa-chaos', 'Ternoa Chaos', { ns: 'apps-config' }),
       providers: {
         CapsuleCorp: 'wss://chaos.ternoa.com'
+      }
+    },
+    {
+      info: 'laminar',
+      text: t('rpc.turbulence', 'Turbulence', { ns: 'apps-config' }),
+      providers: {
+        Laminar: 'wss://testnet-node-1.laminar-chain.laminar.one/ws'
+      }
+    },
+    {
+      info: 'uniarts',
+      text: t('rpc.uniarts', 'Uniarts', { ns: 'apps-config' }),
+      providers: {
+        Uniarts: 'wss://testnet.uniarts.me'
       }
     },
     {
@@ -224,13 +229,6 @@ export function createTesting (t: TFunction): LinkOption[] {
       text: t('rpc.zero', 'Zero', { ns: 'apps-config' }),
       providers: {
         ZERO: 'wss://alphaville-0.zero.io'
-      }
-    },
-    {
-      info: 'uniarts',
-      text: t('rpc.uniarts', 'Uniarts', { ns: 'apps-config' }),
-      providers: {
-        Uniarts: 'wss://testnet.uniarts.me'
       }
     }
   ]);

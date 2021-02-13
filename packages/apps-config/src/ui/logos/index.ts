@@ -14,6 +14,7 @@ import chainRococo from './chains/rococo.svg';
 import chainRococoTick from './chains/rococo-tick.svg';
 import chainRococoTrack from './chains/rococo-track.svg';
 import chainRococoTrick from './chains/rococo-trick.svg';
+import chainSnakenet from './chains/snakenet.svg';
 import extensionPolkadotJs from './extensions/polkadot-js.svg';
 import externalCommonwealth from './external/commonwealth.png';
 import externalPolkascan from './external/polkascan.png';
@@ -34,6 +35,7 @@ import nodeDarwinia from './nodes/darwinia.png';
 import nodeDataHighway from './nodes/datahighway.png';
 import nodeDockMainnet from './nodes/dock-mainnet.png';
 import nodeDockTestnet from './nodes/dock-testnet.png';
+import nodeDotMog from './nodes/dotmog.svg';
 import nodeEdgeware from './nodes/edgeware-circle.svg';
 import nodeEncointerNotee from './nodes/encointer-notee.svg';
 import nodeEncointerTeeproxy from './nodes/encointer-teeproxy.svg';
@@ -45,6 +47,7 @@ import nodeJupiter from './nodes/jupiter.svg';
 import nodeKilt from './nodes/kilt.svg';
 import nodeKulupu from './nodes/kulupu.svg';
 import nodeLaminar from './nodes/laminar-circle.svg';
+import nodeLitentry from './nodes/litentry.png';
 import nodeMath from './nodes/math.svg';
 import moonbeam from './nodes/moonbeam.png';
 import nodeNodle from './nodes/nodle.svg';
@@ -57,9 +60,11 @@ import nodePolkadotJs from './nodes/polkadot-js.svg';
 import nodeRobonomics from './nodes/robonomics.svg';
 import nodeSora from './nodes/sora-substrate.svg';
 import nodeStafi from './nodes/stafi.png';
+import nodeSubDAO from './nodes/subdao.png';
 import nodeSubsocial from './nodes/subsocial.svg';
 import nodeSubstrate from './nodes/substrate-hexagon.svg';
 import nodeTernoa from './nodes/ternoa.svg';
+import nodeTrustBase from './nodes/trustbase.png';
 import nodeUniarts from './nodes/uniarts.png';
 import nodeZenlink from './nodes/zenlink.svg';
 import nodeZero from './nodes/zero.svg';
@@ -78,6 +83,7 @@ export const chainLogos: Record<string, unknown> = [
   ['Dusty', chainDusty],
   ['Galois', nodeMath],
   ['HydraDX Hydrate', chainHydrate],
+  ['HydraDX Snakenet', chainSnakenet],
   ['Encointer PC1', nodeEncointerNotee],
   ['Idavoll', nodeIdavoll],
   ['IntegriTEE PC1', nodeIntegritee],
@@ -87,6 +93,8 @@ export const chainLogos: Record<string, unknown> = [
   ['Kusama CC2', chainKusama],
   ['Kusama CC3', chainKusama],
   ['Moonbase Alpha', moonbeam],
+  ['Moonbase Stage', moonbeam],
+  ['Moonbase Development Testnet', moonbeam],
   ['PolkaBTC', nodePolkaBTC],
   ['PolkaBTC Staging', nodePolkaBTC],
   ['Polkadex Testnet', nodePolkadex],
@@ -95,6 +103,7 @@ export const chainLogos: Record<string, unknown> = [
   ['Tick', chainRococoTick],
   ['Track', chainRococoTrack],
   ['Trick', chainRococoTrick],
+  ['TrustBase PC1', nodeTrustBase],
   ['Uniarts', nodeUniarts]
 ].reduce((logos, [chain, logo]): Record<string, unknown> => ({
   ...logos,
@@ -113,6 +122,7 @@ export const nodeLogos: Record<string, unknown> = [
   ['Bifrost', nodeBifrost],
   ['BitCountry Node', nodeBitCountry],
   ['Bit.Country', nodeBitCountry],
+  ['Bit Country Tewai Parachain Collator', nodeBitCountry],
   ['Canvas Node', nodeCanvas],
   ['centrifuge chain', nodeCentrifuge],
   ['Centrifuge Chain Node', nodeCentrifuge],
@@ -128,6 +138,7 @@ export const nodeLogos: Record<string, unknown> = [
   ['DataHighway Node', nodeDataHighway],
   ['DataHighway Parachain Collator', nodeDataHighway],
   ['Dock Full Node', nodeDockMainnet],
+  ['DOTMog Node', nodeDotMog],
   ['Edgeware Node', nodeEdgeware],
   ['Encointer Node', nodeEncointerNotee],
   ['Encointer Node noTEE', nodeEncointerNotee],
@@ -140,6 +151,7 @@ export const nodeLogos: Record<string, unknown> = [
   ['KILT Collator', nodeKilt],
   ['kulupu', nodeKulupu],
   ['Laminar Node', nodeLaminar],
+  ['Litentry Parachain Collator', nodeLitentry],
   ['node-template', nodeSubstrate],
   ['Nodle Chain Node', nodeNodle],
   ['Polkadex Node', nodePolkadex],
@@ -159,8 +171,11 @@ export const nodeLogos: Record<string, unknown> = [
   ['Equilibrium', nodeEquilibrium],
   ['SUBZΞRO', nodeZero],
   ['Ternoa Node', nodeTernoa],
+  ['TrustBase Node', nodeTrustBase],
+  ['TrustBase Collator', nodeTrustBase],
   ['Zenlink', nodeZenlink],
   ['Zenlink Collator', nodeZenlink],
+  ['SubDAO Collator', nodeSubDAO],
   ['Uniarts', nodeUniarts]
 ].reduce((logos, [node, logo]): Record<string, unknown> => ({
   ...logos,
@@ -186,6 +201,7 @@ export const namedLogos: Record<string, unknown> = {
   datahighway: nodeDataHighway,
   'dock-mainnet': nodeDockMainnet,
   'dock-testnet': nodeDockTestnet,
+  dotmog: nodeDotMog,
   dusty: chainDusty,
   edgeware: nodeEdgeware,
   empty: emptyLogo,
@@ -211,23 +227,29 @@ export const namedLogos: Record<string, unknown> = {
   rococoAcala: nodeAcala,
   rococoAres: nodeAres,
   rococoBifrost: nodeBifrost,
+  rococoBitCountry: nodeBitCountry,
   rococoClover: nodeClover,
   rococoCrust: nodeCrust,
   rococoDarwinia: nodeDarwinia,
   rococoDataHighway: nodeDataHighway,
   rococoEncointer: nodeEncointerNotee,
   rococoHydrate: chainHydrate,
+  rococoIdavoll: nodeIdavoll,
   rococoIntegritee: nodeIntegritee,
   rococoKilt: nodeKilt,
   rococoLaminar: nodeLaminar,
+  rococoLitentry: nodeLitentry,
   rococoPhala: nodePhala,
   rococoPlasm: nodePlasm,
   rococoPolkabtc: chainPolkaBTC,
   rococoRobonomics: nodeRobonomics,
+  rococoSubDAO: nodeSubDAO,
   rococoTick: chainRococoTick,
   rococoTrack: chainRococoTrack,
   rococoTrick: chainRococoTrick,
+  rococoTrustBase: nodeTrustBase,
   rococoZenlink: nodeZenlink,
+  snakenet: chainSnakenet,
   'sora-substrate': nodeSora,
   stafi: nodeStafi,
   subsocial: nodeSubsocial,

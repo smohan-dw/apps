@@ -101,6 +101,14 @@ export function createProduction (t: TFunction): LinkOption[] {
       }
     },
     {
+      info: 'snakenet',
+      text: t('rpc.hydra', 'HydraDX', { ns: 'apps-config' }),
+      providers: {
+        HydraDX: 'wss://rpc-01.snakenet.hydradx.io',
+        'Galactic Council': 'wss://rpc-02.snakenet.hydradx.io'
+      }
+    },
+    {
       dnslink: 'kulupu',
       info: 'kulupu',
       text: t('rpc.kulupu', 'Kulupu', { ns: 'apps-config' }),
@@ -113,7 +121,7 @@ export function createProduction (t: TFunction): LinkOption[] {
       info: 'nodle',
       text: t('rpc.nodle-main', 'Nodle', { ns: 'apps-config' }),
       providers: {
-        Nodle: 'wss://main1.nodleprotocol.io',
+        Nodle: 'wss://main3.nodleprotocol.io',
         'Patract Elara': 'wss://nodle.elara.patract.io'
       }
     },

@@ -7,18 +7,9 @@ type bountyTheme = {
 }
 
 export const bountyBorderColor: bountyTheme = {
-  dark: '#2f313c',
-  light: '#dfdfdf'
-};
-
-export const bountyColor: bountyTheme = {
-  dark: '#BDBDBD',
-  light: '#1a1b20'
-};
-
-export const bountyOddRowBackground: bountyTheme = {
-  dark: '#111218',
-  light: '#fff'
+  // align with table
+  dark: '#26272c', // '#2f313c',
+  light: '#eeecea' // '#dfdfdf'
 };
 
 export const bountyLabelColor: bountyTheme = {

@@ -8,7 +8,7 @@ import { Tabs } from '@polkadot/react-components';
 import { ThemeProps } from '@polkadot/react-components/types';
 
 import Bounties from './Bounties';
-import { bountyBorderColor, bountyColor, bountyOddRowBackground } from './theme';
+import { bountyBorderColor } from './theme';
 import { useTranslation } from './translate';
 
 export { default as useCounter } from './useCounter';
@@ -63,7 +63,6 @@ export default React.memo(styled(BountiesApp)(({ theme }: ThemeProps) => `
     vertical-align: baseline;
     font-size: 1rem;
     line-height: 1.7rem;
-    color: ${bountyColor[theme.theme]};
     border-bottom: 1px solid ${bountyBorderColor[theme.theme]};
 
     &:first-child {
@@ -76,16 +75,16 @@ export default React.memo(styled(BountiesApp)(({ theme }: ThemeProps) => `
   }
 
   tbody tr {
-    &:nth-child(odd) {
-      background: ${bountyOddRowBackground[theme.theme]};
+    &.noBorder td {
+      border-bottom: 1px solid transparent;
+    }
+
+    &:nth-child(even) td {
+      padding: 0 1rem 1.4rem;
     }
 
     &:nth-child(odd) td {
       vertical-align: middle;
-    }
-
-    &:nth-child(even) {
-      background: ${theme.bgPage};
     }
 
     &:first-child {
